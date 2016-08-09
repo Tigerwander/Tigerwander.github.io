@@ -7,7 +7,7 @@
 
 <html class="theme-next muse use-motion">
 <head>
-  <meta charset="UTF-8"/>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -112,7 +112,7 @@
 
   <link rel="canonical" href="http://yoursite.com/"/>
 
-  <title> 渣渣的一亩三分 </title>
+  <title> 渣渣的一亩三分 </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -133,7 +133,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container one-collumn sidebar-position-left 
    page-home 
  ">
     <div class="headband"></div>
@@ -348,6 +348,257 @@
             
               
                 
+                <a class="post-title-link" href="/2016/08/08/岭回归算法/" itemprop="url">
+                  Ridge Regression
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-08T11:37:11+08:00" content="2016-08-08">
+              2016-08-08
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/machine-learning/" itemprop="url" rel="index">
+                    <span itemprop="name">machine learning</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/machine-learning/线性模型/" itemprop="url" rel="index">
+                    <span itemprop="name">线性模型</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p> 在前面我们大致介绍了线性模型的一般形式，基本的线性模型是通过用最小二乘算法对数据进行拟合，得到的参数完全依赖于数据，如果数据不完全或者有噪音也会影响到参数的精度，即所谓的过拟合现象，过拟合的本质除了数据外不受别的因素的限制，得到的模型在训练数据上测试得到的精度可能会很高，往往模型也很复杂。而根据奥卡姆剃刀原理，解决相同的问题，模型越简单约好，可以针对模型做一下复杂度的限制，这种手段被称为模型的正则化，最常见的就是Ridge Regression和Lasso Regression，这里先介绍Ridge Regression。<br> Ridge Regression的思想就是在原模型的基础上加入模型参数二次方的约束$$\min\limits_{w} \lVert Xw - y \rVert_2^2+\alpha \lVert w \rVert_2^2$$<br> 对其关于$w$求导得到<br> $$\frac{\partial L}{\partial w}=2X^T(Xw-y) + 2\alpha w$$<br> 令其等于0，得到<br> $$(X^TX + \alpha I)w = X^Ty$$<br> 这就类似于$Ax=b$的形式了，可以直接求解。关于这个方程sklearn有多种解法，包括’sparse_cg’, ‘cholesky’, ‘svd’, ‘lsqr’, ‘sag’,之所以有这么多种解法，是因为数据源的不同，数据源可能是系数的，奇异的等等。<br> $(X^TX + \alpha I)$是实对称矩阵，并且是半正定的,因此可以用cholesky将其分解为$LL^T$，并且$L$是唯一的，L为上三角矩阵，$Ax=b$就转换为$LL^Tx=b$，上三角为下三角的矩阵求解线性方程就很容易了，sklearn中同样是使用scipy中的linalg模块中的solve算法去求解的。代码也没什么可看的，如果需要追寻更深的细节，可以自行去看scipy。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/08/08/线性模型-基础/" itemprop="url">
+                  线性模型
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-08T11:37:11+08:00" content="2016-08-08">
+              2016-08-08
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/machine-learning/" itemprop="url" rel="index">
+                    <span itemprop="name">machine learning</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/machine-learning/线性模型/" itemprop="url" rel="index">
+                    <span itemprop="name">线性模型</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>博客系列文章从分类讲起，而分类的基础是线性模型，因此接下来的一些系列都是关于线性模型以及扩展，我们首先从基础的线性模型讲起。<br>线性模型的非正式定义：目标变量是自变量的线性联合。用数学语言表达就是对于自变量 $X=(x_1,x_2,\cdots,x_n)$ 和因变量 $y$，有<br>$$y(W,X)=w_1x_1 + \cdots + w_nx_n$$</p>
+<p>其中$W=(w_0,\cdots,w_n)$是特征系数。<br>在sklearn中，最基础的线性模型是通过最小二乘算法得到的。线性模型的残差为$$e(w)=\sum(y_i-wx_i)^2$$<br>线性模型求解的思路就是使得残差$e$最小，回忆之前所学的数学知识，求函数最小值得方法有极值法，对自变量求导，导数为0时，函数有最小值。这里自变量为$w$，对其求导有<br>$$\frac{\partial e}{\partial w}=\sum(y_i-wx_i)x_i$$<br>让导数为0，得到$w$的值即可。<br>sklearn中关于最小二乘的解法是使用scipy包中的linalg模块，比较简单，所以不再赘述。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/08/08/test/" itemprop="url">
                   test
                 </a>
@@ -393,6 +644,21 @@
         
           
             <p>带剑三尺闯天下，闯不了天下我就回家</p>
+<ul>
+<li>the one</li>
+<li>that one</li>
+<li>all</li>
+</ul>
+<blockquote>
+<p>Block quotes are<br>written like so.</p>
+<p>They can span multiple paragraphs,<br>if you like.</p>
+</blockquote>
+<p>Note again how the actual text starts at 4 columns in (4 characters<br>from the left side). Here’s a code sample:</p>
+<pre><code># Let me re-iterate ...
+for i in 1 .. 10 { do-something(i) }
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> time</div><div class="line"><span class="comment"># Quick, count to ten!</span></div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>):</div><div class="line">    <span class="comment"># (but not *too* quick)</span></div><div class="line">    time.sleep(<span class="number">0.5</span>)</div><div class="line">    <span class="keyword">print</span> i</div></pre></td></tr></table></figure>
+<p>Inline math equations go in like so: $\omega = d\phi / dt$. Display<br>math should get its own line and be put in in double-dollarsigns:</p>
+<p>$$I = \int \rho R^{2} dV$$</p>
 
           
         
@@ -564,7 +830,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-count">5</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -572,7 +838,7 @@
           
             <div class="site-state-item site-state-categories">
               
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">分类</span>
               
             </div>
@@ -581,7 +847,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -703,7 +969,24 @@
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
 
 
 
