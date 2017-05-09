@@ -235,7 +235,101 @@
             
               
                 
-                <a class="post-title-link" href="/2016/08/26/Untitled/" itemprop="url">
+                <a class="post-title-link" href="/2017/05/09/returnHexo/" itemprop="url">
+                  returnHexo
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-05-09T18:16:48+08:00" content="2017-05-09">
+              2017-05-09
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>I return Hexo today!!</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/08/26/New_test/" itemprop="url">
                   未命名
                 </a>
               
@@ -279,7 +373,9 @@
       
         
           
-            
+            <p>Hello, World</p>
+<p>I am a new test for returning hexo!!</p>
+
           
         
       
@@ -403,7 +499,7 @@
       
         
           
-            <p> 在前面我们大致介绍了线性模型的一般形式，基本的线性模型是通过用最小二乘算法对数据进行拟合，得到的参数完全依赖于数据，如果数据不完全或者有噪音也会影响到参数的精度，即所谓的过拟合现象，过拟合的本质除了数据外不受别的因素的限制，得到的模型在训练数据上测试得到的精度可能会很高，往往模型也很复杂。而根据奥卡姆剃刀原理，解决相同的问题，模型越简单约好，可以针对模型做一下复杂度的限制，复杂度的限制主要包括subset selection 和 shrinkage两种方法，前一种是从所有的变量中选择一部分，这部分变量构成的模型使得残差最小，这种方法的主要不足之处是它是一个离散的方法，对每个变量是0或1决策，导致模型受制于变量的选择。而shrinkage是连续的，它并不是选择子集变量，而是对模型进行惩罚约束，使得每个变量的系数不致过大，因此这种方法的优势相对于subset selection 就是每个变量都在模型中，其值是由惩罚项和数据共同决定的，消除了subset selection 带来的变量0/1问题。subset selection我们放到别的blog中去讲，这篇blog主要讲Ridge Regression。<br> Ridge Regression的思想就是在原模型的基础上加入模型参数二次方的约束$$\min\limits_{w} \lVert Xw - y \rVert_2^2+\alpha \lVert w \rVert_2^2$$<br> 变换形式有<br> $$RSS(w)=(Y-Xw)^T(Y-Xw) + \alpha (w^Tw)$$<br> 对其关于$w$求导得到<br> $$\frac{\partial L}{\partial w}=2X^T(Xw-y) + 2\alpha w$$<br> 令其等于0，得到<br> $$(X^TX + \alpha I)w = X^Ty$$<br> 这就类似于$Ax=b$的形式了，可以直接求解。得到<br> $$w = (X^TX + \alpha I)^-1X^TY$$<br> 关于这个方程sklearn有多种解法，包括’sparse_cg’, ‘cholesky’, ‘svd’, ‘lsqr’, ‘sag’,之所以有这么多种解法，是因为数据源的不同，数据源可能是系数的，奇异的等等。<br> $(X^TX + \alpha I)$是实对称矩阵，并且是半正定的,因此可以用cholesky将其分解为$LL^T$，并且$L$是唯一的，L为上三角矩阵，$Ax=b$就转换为$LL^Tx=b$，上三角为下三角的矩阵求解线性方程就很容易了，sklearn中同样是使用scipy中的linalg模块中的solve算法去求解的。代码也没什么可看的，如果需要追寻更深的细节，可以自行去看scipy。</p>
+            <p> 在前面我们大致介绍了线性模型的一般形式，基本的线性模型是通过用最小二乘算法对数据进行拟合，得到的参数完全依赖于数据，如果数据不完全或者有噪音也会影响到参数的精度，即所谓的过拟合现象，过拟合的本质除了数据外不受别的因素的限制，得到的模型在训练数据上测试得到的精度可能会很高，往往模型也很复杂。而根据奥卡姆剃刀原理，解决相同的问题，模型越简单约好，可以针对模型做一下复杂度的限制，复杂度的限制主要包括subset selection 和 shrinkage两种方法，前一种是从所有的变量中选择一部分，这部分变量构成的模型使得残差最小，这种方法的主要不足之处是它是一个离散的方法，对每个变量是0或1决策，导致模型受制于变量的选择。而shrinkage是连续的，它并不是选择子集变量，而是对模型进行惩罚约束，使得每个变量的系数不致过大，因此这种方法的优势相对于subset selection 就是每个变量都在模型中，其值是由惩罚项和数据共同决定的，消除了subset selection 带来的变量0/1问题。subset selection我们放到别的blog中去讲，这篇blog主要讲Ridge Regression。<br> Ridge Regression的思想就是在原模型的基础上加入模型参数二次方的约束$$\min\limits_{w} \lVert Xw - y \rVert_2^2+\alpha \lVert w \rVert_2^2$$<br> 变换形式有<br> $$RSS(w)=(Y-Xw)^T(Y-Xw) + \alpha (w^Tw)$$<br> 对其关于$w$求导得到<br> $$\frac{\partial L}{\partial w}=2X^T(Xw-y) + 2\alpha w$$<br> 令其等于0，得到<br> $$(X^TX + \alpha I)w = X^Ty$$<br> 这就类似于$Ax=b$的形式了，可以直接求解。得到<br> $$w = (X^TX + \alpha I)^{-1}X^TY$$<br> 相比于普通的线性回归，它加入了$\alpha I$项，这样即使$X^TX$不是满秩矩阵，第一项仍然可逆，可以直接求解，这也是二次正则引入统计学的原因之一。<br> 在最小二乘求解线性方程时<br> $$w=(X^TX)^{-1}X^TY$$<br> 如果X是单位正交矩阵，则$X^TX$为单位矩阵，在这种条件下<br> $$w=X^TY$$<br> 衍生到ridge regression中<br>  $$w=(\alpha + 1)X^TY$$<br>  那么最小二乘的解与ridge regression的解的关系是<br>  $$\widehat{w} = \frac{\widehat{w}^{ridge}}{\alpha + 1}$$</p>
 
           
         
@@ -923,7 +1019,7 @@ for i in 1 .. 10 { do-something(i) }
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-count">7</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -977,7 +1073,7 @@ for i in 1 .. 10 { do-something(i) }
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2016</span>
+  <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
