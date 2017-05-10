@@ -93,7 +93,7 @@ $\langle f(x),d \rangle$是函数在点$x$处沿着方向$d$增加的速率，�
 <meta property="og:description" content="如下图所示，梯度是函数的导数形式$\bigtriangledown f(x)$,经过函数点，方向为梯度的直线也被称为函数在该点的切线。在该点处，函数值增加最大的方向就是切线的方向，所以在求函数的极小值时就可以沿着梯度的负方向寻找。下面尝试进行简单的证明
 $\langle f(x),d \rangle$是函数在点$x$处沿着方向$d$增加的速率，其中$||d||=1$。根据Cauchy-Schwar">
 <meta property="og:image" content="http://yoursite.com/Users/didi/Desktop/gradient.jpg">
-<meta property="og:updated_time" content="2017-05-10T10:16:52.000Z">
+<meta property="og:updated_time" content="2017-05-10T10:18:39.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="梯度方法">
 <meta name="twitter:description" content="如下图所示，梯度是函数的导数形式$\bigtriangledown f(x)$,经过函数点，方向为梯度的直线也被称为函数在该点的切线。在该点处，函数值增加最大的方向就是切线的方向，所以在求函数的极小值时就可以沿着梯度的负方向寻找。下面尝试进行简单的证明
@@ -288,7 +288,7 @@ $\langle f(x),d \rangle$是函数在点$x$处沿着方向$d$增加的速率，�
 <p>$$<br>\langle f(x),d \rangle \le ||f(x)||<br>$$</p>
 <p>因此，$f(x)$沿着任何方向的增加速率都小于等于沿着梯度方向的增加速率。</p>
 <p>接下来就要具体化怎么使用梯度去求函数极值。用梯度去求极值一般都是迭代求解，从初始点$x_{0}$开始一直迭代找到极小值点，其迭代公式为</p>
-<p>$$<br>x<em>{k+1}=x</em>{k}<br>$$</p>
+<p>$$<br>=x_{k}<br>$$</p>
 <p>其中，$\alpha$是大于0的步长，可以用泰勒展开说明这种迭代的有效性</p>
 <p>$$<br>f(x-\alpha\bigtriangledown f(x))=f(x)-\alpha ||\bigtriangledown f(x)||^2+o(\alpha)<br>$$</p>
 <p>可以看到，$f(x-\alpha\bigtriangledown f(x)) - f(x)$的值永远是小于等于0，当$\bigtriangledown f(x)=0$时，函数值不再减小，这时候就得到了函数的一个极值。</p>
