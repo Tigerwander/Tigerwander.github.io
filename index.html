@@ -286,7 +286,7 @@
 <p>$$<br>\langle f(x),d \rangle \le ||f(x)||<br>$$</p>
 <p>因此，$f(x)$沿着任何方向的增加速率都小于等于沿着梯度方向的增加速率。</p>
 <p>接下来就要具体化怎么使用梯度去求函数极值。用梯度去求极值一般都是迭代求解，从初始点$x_{0}$开始一直迭代找到极小值点，迭代公式为</p>
-<p>$$<br>x<em>{k+1}=x</em>{k}-\alpha\bigtriangledown f(x_{k})<br>$$</p>
+<p>$$<br>x_{k+1}<br>$$</p>
 <p>其中，$\alpha$是大于0的步长，可以用泰勒展开说明这种迭代的有效性</p>
 <p>$$<br>f(x-\alpha\bigtriangledown f(x))=f(x)-\alpha ||\bigtriangledown f(x)||^2+o(\alpha)<br>$$</p>
 <p>可以看到，$f(x-\alpha\bigtriangledown f(x)) - f(x)$的值永远是小于等于0，当$\bigtriangledown f(x)=0$时，函数值不再减小，这时候就得到了函数的一个极值。</p>
@@ -389,6 +389,131 @@
         
           
             <p>I return Hexo today!!</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/08/08/岭回归算法/" itemprop="url">
+                  Ridge Regression
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-08T11:37:11+08:00" content="2016-08-08">
+              2016-08-08
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/machine-learning/" itemprop="url" rel="index">
+                    <span itemprop="name">machine learning</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/machine-learning/线性模型/" itemprop="url" rel="index">
+                    <span itemprop="name">线性模型</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p> 在前面我们大致介绍了线性模型的一般形式，基本的线性模型是通过用最小二乘算法对数据进行拟合，得到的参数完全依赖于数据，如果数据不完全或者有噪音也会影响到参数的精度，即所谓的过拟合现象，过拟合的本质除了数据外不受别的因素的限制，得到的模型在训练数据上测试得到的精度可能会很高，往往模型也很复杂。而根据奥卡姆剃刀原理，解决相同的问题，模型越简单约好，可以针对模型做一下复杂度的限制，复杂度的限制主要包括subset selection 和 shrinkage两种方法，前一种是从所有的变量中选择一部分，这部分变量构成的模型使得残差最小，这种方法的主要不足之处是它是一个离散的方法，对每个变量是0或1决策，导致模型受制于变量的选择。而shrinkage是连续的，它并不是选择子集变量，而是对模型进行惩罚约束，使得每个变量的系数不致过大，因此这种方法的优势相对于subset selection 就是每个变量都在模型中，其值是由惩罚项和数据共同决定的，消除了subset selection 带来的变量0/1问题。subset selection我们放到别的blog中去讲，这篇blog主要讲Ridge Regression。<br> Ridge Regression的思想就是在原模型的基础上加入模型参数二次方的约束$$\min\limits_{w} \lVert Xw - y \rVert_2^2+\alpha \lVert w \rVert_2^2$$<br> 变换形式有<br> $$RSS(w)=(Y-Xw)^T(Y-Xw) + \alpha (w^Tw)$$<br> 对其关于$w$求导得到<br> $$\frac{\partial L}{\partial w}=2X^T(Xw-y) + 2\alpha w$$<br> 令其等于0，得到<br> $$(X^TX + \alpha I)w = X^Ty$$<br> 这就类似于$Ax=b$的形式了，可以直接求解。得到<br> $$w = (X^TX + \alpha I)^{-1}X^TY$$<br> 相比于普通的线性回归，它加入了$\alpha I$项，这样即使$X^TX$不是满秩矩阵，第一项仍然可逆，可以直接求解，这也是二次正则引入统计学的原因之一。<br> 在最小二乘求解线性方程时<br> $$w=(X^TX)^{-1}X^TY$$<br> 如果X是单位正交矩阵，则$X^TX$为单位矩阵，在这种条件下<br> $$w=X^TY$$<br> 衍生到ridge regression中<br>  $$w=(\alpha + 1)X^TY$$<br>  那么最小二乘的解与ridge regression的解的关系是<br>  $$\widehat{w} = \frac{\widehat{w}^{ridge}}{\alpha + 1}$$</p>
 
           
         
@@ -628,131 +753,6 @@
           
             <p>博客系列文章从分类讲起，而分类的基础是线性模型，因此接下来的一些系列都是关于线性模型以及扩展，我们首先从基础的线性模型讲起。<br>线性模型的非正式定义：目标变量是自变量的线性联合。用数学语言表达就是对于自变量 $X=(x_1,x_2,\cdots,x_n)$ 和因变量 $y$，有<br>$$y(W,X)=w_1x_1 + \cdots + w_nx_n$$</p>
 <p>其中$W=(w_0,\cdots,w_n)$是特征系数。<br>在sklearn中，最基础的线性模型是通过最小二乘算法得到的。线性模型的残差为$$e(w)=\sum(y_i-wx_i)^2$$<br>线性模型求解的思路就是使得残差$e$最小，回忆之前所学的数学知识，求函数最小值得方法有极值法，对自变量求导，导数为0时，函数有最小值。这里自变量为$w$，对其求导有<br>$$\frac{\partial e}{\partial w}=\sum(y_i-wx_i)x_i$$<br>让导数为0，得到$w$的值即可。<br>sklearn中关于最小二乘的解法是使用scipy包中的linalg模块，比较简单，所以不再赘述。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/08/08/岭回归算法/" itemprop="url">
-                  Ridge Regression
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-08T11:37:11+08:00" content="2016-08-08">
-              2016-08-08
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/machine-learning/" itemprop="url" rel="index">
-                    <span itemprop="name">machine learning</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/machine-learning/线性模型/" itemprop="url" rel="index">
-                    <span itemprop="name">线性模型</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p> 在前面我们大致介绍了线性模型的一般形式，基本的线性模型是通过用最小二乘算法对数据进行拟合，得到的参数完全依赖于数据，如果数据不完全或者有噪音也会影响到参数的精度，即所谓的过拟合现象，过拟合的本质除了数据外不受别的因素的限制，得到的模型在训练数据上测试得到的精度可能会很高，往往模型也很复杂。而根据奥卡姆剃刀原理，解决相同的问题，模型越简单约好，可以针对模型做一下复杂度的限制，复杂度的限制主要包括subset selection 和 shrinkage两种方法，前一种是从所有的变量中选择一部分，这部分变量构成的模型使得残差最小，这种方法的主要不足之处是它是一个离散的方法，对每个变量是0或1决策，导致模型受制于变量的选择。而shrinkage是连续的，它并不是选择子集变量，而是对模型进行惩罚约束，使得每个变量的系数不致过大，因此这种方法的优势相对于subset selection 就是每个变量都在模型中，其值是由惩罚项和数据共同决定的，消除了subset selection 带来的变量0/1问题。subset selection我们放到别的blog中去讲，这篇blog主要讲Ridge Regression。<br> Ridge Regression的思想就是在原模型的基础上加入模型参数二次方的约束$$\min\limits_{w} \lVert Xw - y \rVert_2^2+\alpha \lVert w \rVert_2^2$$<br> 变换形式有<br> $$RSS(w)=(Y-Xw)^T(Y-Xw) + \alpha (w^Tw)$$<br> 对其关于$w$求导得到<br> $$\frac{\partial L}{\partial w}=2X^T(Xw-y) + 2\alpha w$$<br> 令其等于0，得到<br> $$(X^TX + \alpha I)w = X^Ty$$<br> 这就类似于$Ax=b$的形式了，可以直接求解。得到<br> $$w = (X^TX + \alpha I)^{-1}X^TY$$<br> 相比于普通的线性回归，它加入了$\alpha I$项，这样即使$X^TX$不是满秩矩阵，第一项仍然可逆，可以直接求解，这也是二次正则引入统计学的原因之一。<br> 在最小二乘求解线性方程时<br> $$w=(X^TX)^{-1}X^TY$$<br> 如果X是单位正交矩阵，则$X^TX$为单位矩阵，在这种条件下<br> $$w=X^TY$$<br> 衍生到ridge regression中<br>  $$w=(\alpha + 1)X^TY$$<br>  那么最小二乘的解与ridge regression的解的关系是<br>  $$\widehat{w} = \frac{\widehat{w}^{ridge}}{\alpha + 1}$$</p>
 
           
         
