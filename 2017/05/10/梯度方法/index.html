@@ -84,12 +84,27 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="渣渣的一亩三分">
-<meta property="og:url" content="http://yoursite.com/tags/岭回归/index.html">
+<meta name="description" content="如下图所示，梯度是函数的导数形式$$\bigtriangledownf(x)$$经过函数点，方向为梯度的直线也被称为函数在该点的切线。在该点处，函数值增加最大的方向就是切线的方向，所以在求函数的极小值时就可以沿着梯度的负方向寻找。下面尝试进行简单的证明
+$$$$是函数在点$$x$$处沿着方向$$d$$增加的速率，其中$$|d|=1$$。根据Cauchy-Schwarz不等式
+$$
+\le|f(x)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="梯度方法">
+<meta property="og:url" content="http://yoursite.com/2017/05/10/梯度方法/index.html">
 <meta property="og:site_name" content="渣渣的一亩三分">
+<meta property="og:description" content="如下图所示，梯度是函数的导数形式$$\bigtriangledownf(x)$$经过函数点，方向为梯度的直线也被称为函数在该点的切线。在该点处，函数值增加最大的方向就是切线的方向，所以在求函数的极小值时就可以沿着梯度的负方向寻找。下面尝试进行简单的证明
+$$$$是函数在点$$x$$处沿着方向$$d$$增加的速率，其中$$|d|=1$$。根据Cauchy-Schwarz不等式
+$$
+\le|f(x)">
+<meta property="og:image" content="http://yoursite.com/Users/didi/Desktop/gradient.jpg">
+<meta property="og:updated_time" content="2017-05-10T08:55:11.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="渣渣的一亩三分">
+<meta name="twitter:title" content="梯度方法">
+<meta name="twitter:description" content="如下图所示，梯度是函数的导数形式$$\bigtriangledownf(x)$$经过函数点，方向为梯度的直线也被称为函数在该点的切线。在该点处，函数值增加最大的方向就是切线的方向，所以在求函数的极小值时就可以沿着梯度的负方向寻找。下面尝试进行简单的证明
+$$$$是函数在点$$x$$处沿着方向$$d$$增加的速率，其中$$|d|=1$$。根据Cauchy-Schwarz不等式
+$$
+\le|f(x)">
+<meta name="twitter:image" content="http://yoursite.com/Users/didi/Desktop/gradient.jpg">
 
 
 
@@ -110,9 +125,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/岭回归/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/05/10/梯度方法/"/>
 
-  <title> 标签: 岭回归 | 渣渣的一亩三分 </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title> 梯度方法 | 渣渣的一亩三分 </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -133,7 +148,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container one-collumn sidebar-position-left  ">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -211,46 +226,124 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        岭回归
-        <small>标签</small>
-      </h2>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                梯度方法
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-05-10T16:09:52+08:00" content="2017-05-10">
+              2017-05-10
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <p>如下图所示，梯度是函数的导数形式$$\bigtriangledownf(x)$$<br>经过函数点，方向为梯度的直线也被称为函数在该点的切线。在该点处，函数值增加最大的方向就是切线的方向，所以在求函数的极小值时就可以沿着梯度的负方向寻找。下面尝试进行简单的证明</p>
+<p>$$<f(x),d>$$是函数在点$$x$$处沿着方向$$d$$增加的速率，其中$$|d|=1$$。根据Cauchy-Schwarz不等式</f(x),d></p>
+<p>$$</p>
+<p><f(x),d>\le|f(x)||d|<br>$$</f(x),d></p>
+<p>由于$$|d|=1$$,所以</p>
+<p>$$</p>
+<p><f(x),d>\le|f(x)|<br>$$</f(x),d></p>
+<p>因此，$f(x)$沿着任何方向的增加速率都小于等于沿着梯度方向的增加速率。</p>
+<p><img src="/Users/didi/Desktop/gradient.jpg" alt="梯度"></p>
 
-      <h1 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2016/08/08/岭回归算法/" itemprop="url">
-              
-                <span itemprop="name">Ridge Regression</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h1>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-08-08T11:37:11+08:00"
-              content="2016-08-08" >
-          08-08
-        </time>
-      </div>
+      
+    </div>
 
-    </header>
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/05/09/returnHexo/" rel="next" title="returnHexo">
+                <i class="fa fa-chevron-left"></i> returnHexo
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -258,6 +351,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -277,8 +374,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -328,6 +434,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -424,11 +541,32 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
 
 
 
