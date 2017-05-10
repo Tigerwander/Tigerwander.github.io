@@ -283,8 +283,12 @@
 <p>$\langle f(x),d \rangle$是函数在点$x$处沿着方向$d$增加的速率，其中$||d||=1$。根据Cauchy-Schwarz不等式</p>
 <p>$$<br>\langle f(x),d \rangle \le ||f(x)|||d||$$</p>
 <p>由于$||d||=1$,所以</p>
-<p>$$<br>\langle f(x),d \rlangle \le ||f(x)||<br>$$</p>
+<p>$$<br>\langle f(x),d \rangle \le ||f(x)||<br>$$</p>
 <p>因此，$f(x)$沿着任何方向的增加速率都小于等于沿着梯度方向的增加速率。</p>
+<p>接下来就要具体化怎么使用梯度去求函数极值。用梯度去求极值一般都是迭代求解，从初始点$x<em>{0}$开始一直迭代找到极小值点，其迭代公式为<br>$$<br>x</em>{k+1}=x_{k}-\alpha\bigtriangledown f(x_k)<br>$$</p>
+<p>其中，$\alpha$是大于0的步长，可以用泰勒展开说明这种迭代的有效性</p>
+<p>$$<br>f(x-\alpha\bigtriangledown f(x))=f(x)-\alpha ||\bigtriangledown f(x)||^2+o(\alpha)<br>$$</p>
+<p>可以看到，$f(x-\alpha\bigtriangledown f(x)) - f(x)$的值永远是小于等于0，当$\bigtriangledown f(x)=0$时，函数值不在减小，这时候就得到了函数的一个极值。</p>
 <p><img src="/Users/didi/Desktop/gradient.jpg" alt="梯度"></p>
 
           
