@@ -560,119 +560,6 @@
             
               
                 
-                <a class="post-title-link" href="/2016/08/08/渣渣的世界/" itemprop="url">
-                  渣渣的世界
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-08T11:37:11+08:00" content="2016-08-08">
-              2016-08-08
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/machine-learning/" itemprop="url" rel="index">
-                    <span itemprop="name">machine learning</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>前段时间刚刚忙完手上的项目，这段时间闲下来了。<br>生活在帝都，节奏停不下来，一闲下来就心慌，因此想着自己看点什么，学点什么。因为之前搞得一直都是Python相关的项目，所以首先看了一些Python进阶的资料，发现进阶中说的那些Pythonic的用法基本上都已经掌握了，再继续进阶应该就是看源码了，网上推荐的源码有Flask/requests等等工程方向的。但是作为一个数学出身的机器学习方向的计算机屌丝一枚，虽然进公司后主要在搞大数据方向，进公司后就几乎没接触过与算法相关的项目，主要就是在处理大数据以及业务，因此本着进阶Python和温习机器学习算法的目的，打算看一下Python中最著名的机器学习库sklearn源码。Python作为比较好用的脚本式语言，越来越多的开源机器学习库都采用Python开发，著名的有TensorFlow/sklearn/theaono等。为了保持长时间的记忆，并且帮助他人，我会在这里逐渐更新。<br>送人玫瑰，手有余香。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
                 <a class="post-title-link" href="/2016/08/08/线性模型-基础/" itemprop="url">
                   线性模型
                 </a>
@@ -750,6 +637,119 @@
           
             <p>博客系列文章从分类讲起，而分类的基础是线性模型，因此接下来的一些系列都是关于线性模型以及扩展，我们首先从基础的线性模型讲起。<br>线性模型的非正式定义：目标变量是自变量的线性联合。用数学语言表达就是对于自变量 $X=(x_1,x_2,\cdots,x_n)$ 和因变量 $y$，有<br>$$y(W,X)=w_1x_1 + \cdots + w_nx_n$$</p>
 <p>其中$W=(w_0,\cdots,w_n)$是特征系数。<br>在sklearn中，最基础的线性模型是通过最小二乘算法得到的。线性模型的残差为$$e(w)=\sum(y_i-wx_i)^2$$<br>线性模型求解的思路就是使得残差$e$最小，回忆之前所学的数学知识，求函数最小值得方法有极值法，对自变量求导，导数为0时，函数有最小值。这里自变量为$w$，对其求导有<br>$$\frac{\partial e}{\partial w}=\sum(y_i-wx_i)x_i$$<br>让导数为0，得到$w$的值即可。<br>sklearn中关于最小二乘的解法是使用scipy包中的linalg模块，比较简单，所以不再赘述。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/08/08/渣渣的世界/" itemprop="url">
+                  渣渣的世界
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-08T11:37:11+08:00" content="2016-08-08">
+              2016-08-08
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/machine-learning/" itemprop="url" rel="index">
+                    <span itemprop="name">machine learning</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>前段时间刚刚忙完手上的项目，这段时间闲下来了。<br>生活在帝都，节奏停不下来，一闲下来就心慌，因此想着自己看点什么，学点什么。因为之前搞得一直都是Python相关的项目，所以首先看了一些Python进阶的资料，发现进阶中说的那些Pythonic的用法基本上都已经掌握了，再继续进阶应该就是看源码了，网上推荐的源码有Flask/requests等等工程方向的。但是作为一个数学出身的机器学习方向的计算机屌丝一枚，虽然进公司后主要在搞大数据方向，进公司后就几乎没接触过与算法相关的项目，主要就是在处理大数据以及业务，因此本着进阶Python和温习机器学习算法的目的，打算看一下Python中最著名的机器学习库sklearn源码。Python作为比较好用的脚本式语言，越来越多的开源机器学习库都采用Python开发，著名的有TensorFlow/sklearn/theaono等。为了保持长时间的记忆，并且帮助他人，我会在这里逐渐更新。<br>送人玫瑰，手有余香。</p>
 
           
         
