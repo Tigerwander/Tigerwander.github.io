@@ -286,7 +286,7 @@
 <p>$$<br>\langle f(x),d \rangle \le ||f(x)||<br>$$</p>
 <p>因此，$f(x)$沿着任何方向的增加速率都小于等于沿着梯度方向的增加速率。</p>
 <p>接下来就要具体化怎么使用梯度去求函数极值。用梯度去求极值一般都是迭代求解，从初始点$x_{0}$开始一直迭代找到极小值点，迭代公式为</p>
-<p>$$<br>x_{k+1}<br>$$</p>
+<p>$$<br>x_{k+1}=x<br>$$</p>
 <p>其中，$\alpha$是大于0的步长，可以用泰勒展开说明这种迭代的有效性</p>
 <p>$$<br>f(x-\alpha\bigtriangledown f(x))=f(x)-\alpha ||\bigtriangledown f(x)||^2+o(\alpha)<br>$$</p>
 <p>可以看到，$f(x-\alpha\bigtriangledown f(x)) - f(x)$的值永远是小于等于0，当$\bigtriangledown f(x)=0$时，函数值不再减小，这时候就得到了函数的一个极值。</p>
