@@ -93,7 +93,7 @@ $\langle f(x),d \rangle$是函数在点$x$处沿着方向$d$增加的速率，�
 <meta property="og:description" content="如下图所示，梯度是函数的导数形式$\bigtriangledown f(x)$,经过函数点，方向为梯度的直线也被称为函数在该点的切线。在该点处，函数值增加最大的方向就是切线的方向，所以在求函数的极小值时就可以沿着梯度的负方向寻找。下面尝试进行简单的证明
 $\langle f(x),d \rangle$是函数在点$x$处沿着方向$d$增加的速率，其中$||d||=1$。根据Cauchy-Schwar">
 <meta property="og:image" content="http://yoursite.com/Users/didi/Desktop/gradient.jpg">
-<meta property="og:updated_time" content="2017-05-11T07:39:37.000Z">
+<meta property="og:updated_time" content="2017-05-11T07:40:59.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="梯度方法">
 <meta name="twitter:description" content="如下图所示，梯度是函数的导数形式$\bigtriangledown f(x)$,经过函数点，方向为梯度的直线也被称为函数在该点的切线。在该点处，函数值增加最大的方向就是切线的方向，所以在求函数的极小值时就可以沿着梯度的负方向寻找。下面尝试进行简单的证明
@@ -302,10 +302,10 @@ $\langle f(x),d \rangle$是函数在点$x$处沿着方向$d$增加的速率，�
 <p>对$\phi_{k}(\alpha)$求解minimizer得到的$\alpha$就等于在梯度下降法中的一次迭代中设置的最合理的$\alpha$。 实际上，通过最速下降法迭代得到的序列$x_{k},k=0,1,\cdots$中，满足下面关系</p>
 <p>$$<br>\langle x_{k+2}-x_{k+1},x{k+1}-x_{k} \rangle = 0<br>$$</p>
 <p>现做简单证明,根据</p>
-<p>$$<br>x_{k+1}=x{k}-\alpha \bigtriangledown f(x_{k})<br>$$</p>
+<p>$$<br>x_{k+1}=x_{k}-\alpha \bigtriangledown f(x_{k})<br>$$</p>
 <p>可以推导得到</p>
 <p>$$</p>
-<p>\langle x_{k+2}-x_{k+1},x{k+1}-x_{k} \rangle = \alpha_{k}\alpha_{k+1} \langle \bigtriangledown f(x_{k}), f(x_{k+1}) \rangle</p>
+<p>\langle x_{k+2}-x_{k+1},x_{k+1}-x_{k} \rangle = \alpha_{k}\alpha_{k+1} \langle \bigtriangledown f(x_{k}), f(x_{k+1}) \rangle</p>
 <p>$$<br><img src="/Users/didi/Desktop/gradient.jpg" alt="梯度"></p>
 
       
