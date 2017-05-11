@@ -92,7 +92,7 @@ $\langle f(x),d \rangle$是函数在点$x$处沿着">
 <meta property="og:site_name" content="渣渣的一亩三分">
 <meta property="og:description" content="\begin{CJK}{GBK}{song}\begin{document}如下图所示，梯度是函数的导数形式$\bigtriangledown f(x)$,经过函数点，方向为梯度的直线也被称为函数在该点的切线。在该点处，函数值增加最大的方向就是切线的方向，所以在求函数的极小值时就可以沿着梯度的负方向寻找。下面尝试进行简单的证明
 $\langle f(x),d \rangle$是函数在点$x$处沿着">
-<meta property="og:updated_time" content="2017-05-11T13:03:16.000Z">
+<meta property="og:updated_time" content="2017-05-11T13:05:15.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="梯度方法">
 <meta name="twitter:description" content="\begin{CJK}{GBK}{song}\begin{document}如下图所示，梯度是函数的导数形式$\bigtriangledown f(x)$,经过函数点，方向为梯度的直线也被称为函数在该点的切线。在该点处，函数值增加最大的方向就是切线的方向，所以在求函数的极小值时就可以沿着梯度的负方向寻找。下面尝试进行简单的证明
@@ -306,7 +306,7 @@ $\langle f(x),d \rangle$是函数在点$x$处沿着">
 <p>这样问题就转化为了证明</p>
 <p>$$<br>\langle \bigtriangledown f(x_{k}), f(x_{k+1}) \rangle=0<br>$$</p>
 <p>在最速下降法中，为了使得$\phi(\alpha)$最小，根据FONC法则（First-Order Necessary Condition)我们使其梯度为0，有</p>
-<p>$$<br>\begin{align<em>}<br>0=\phi_{k}(\alpha)^’ \<br>&amp;=\frac{d\phi_{k}}{\alpha}(\alpha_{k}) \<br>&amp;=\bigtriangledown f(x_{k}-\alpha \bigtriangledown f(x_{k}))^T(-\bigtriangledown f(x_{k})) \<br>&amp;=-\langle \bigtriangledown f(x_{k+1}), \bigtriangledown f(x_{k}) \ rangle<br>\end{align</em>}<br>$$</p>
+<p>$$<br>\begin{align<em>}<br>0&amp;=\phi_{k}^’(\alpha_{k}) \<br>&amp;=\frac{d\phi_{k}}{\alpha}(\alpha_{k}) \<br>&amp;=\bigtriangledown f(x_{k}-\alpha \bigtriangledown f(x_{k}))^T(-\bigtriangledown f(x_{k})) \<br>&amp;=-\langle \bigtriangledown f(x_{k+1}), \bigtriangledown f(x_{k}) \ rangle<br>\end{align</em>}<br>$$</p>
 <p>因此有</p>
 <p>$$<br>\langle \bigtriangledown f(x_{k}), f(x_{k+1}) \rangle=0<br>$$</p>
 <p>可以看到，最速下降法的迭代是到某一个点为止，这个点与上个点的连线同这个点与下个点的连线垂直。</p>
