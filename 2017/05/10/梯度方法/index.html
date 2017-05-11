@@ -93,7 +93,7 @@ $\langle f(x),d \rangle$是函数在点$x$处沿着方向$d$增加的速率，�
 <meta property="og:description" content="如下图所示，梯度是函数的导数形式$\bigtriangledown f(x)$,经过函数点，方向为梯度的直线也被称为函数在该点的切线。在该点处，函数值增加最大的方向就是切线的方向，所以在求函数的极小值时就可以沿着梯度的负方向寻找。下面尝试进行简单的证明
 $\langle f(x),d \rangle$是函数在点$x$处沿着方向$d$增加的速率，其中$||d||=1$。根据Cauchy-Schwar">
 <meta property="og:image" content="http://yoursite.com/Users/didi/Desktop/gradient.jpg">
-<meta property="og:updated_time" content="2017-05-11T02:14:05.000Z">
+<meta property="og:updated_time" content="2017-05-11T02:41:11.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="梯度方法">
 <meta name="twitter:description" content="如下图所示，梯度是函数的导数形式$\bigtriangledown f(x)$,经过函数点，方向为梯度的直线也被称为函数在该点的切线。在该点处，函数值增加最大的方向就是切线的方向，所以在求函数的极小值时就可以沿着梯度的负方向寻找。下面尝试进行简单的证明
@@ -288,14 +288,15 @@ $\langle f(x),d \rangle$是函数在点$x$处沿着方向$d$增加的速率，�
 <p>$$<br>\langle f(x),d \rangle \le ||f(x)||<br>$$</p>
 <p>因此，$f(x)$沿着任何方向的增加速率都小于等于沿着梯度方向的增加速率。</p>
 <p>接下来就要具体化怎么使用梯度去求函数极值。用梯度去求极值一般都是迭代求解，从初始点$x_{0}$开始一直迭代找到极小值点，迭代公式为</p>
-<p>$$<br>x_{k}-\alpha \bigtriangledown f(x_{k})<br>$$</p>
+<p>$$<br>x_{k+1}=x_{k}-\alpha \bigtriangledown f(x_{k})<br>$$</p>
 <p>其中，$\alpha$是大于0的步长，可以用泰勒展开说明这种迭代的有效性</p>
 <p>$$<br>f(x-\alpha\bigtriangledown f(x))=f(x)-\alpha ||\bigtriangledown f(x)||^2+o(\alpha)<br>$$</p>
 <p>可以看到，$f(x-\alpha\bigtriangledown f(x)) - f(x)$的值永远是小于等于0，当$\bigtriangledown f(x)=0$时，函数值不再减小，这时候就得到了函数的一个极值。</p>
 <p>上述方法也被称为梯度下降法，梯度下降法广泛应用于机器学习的优化求解中，可能最为大家熟悉的就是逻辑回归的最大似然函数的迭代求参了。截止到目前，可能大多数人跟我之前一样对梯度下降法了解到这个水平，或者可能也了解随机梯度下降法。然而可以对梯度下降这种思想做更深的挖掘。</p>
 <p>在迭代公式中，$\alpha$是一个大于0的步长，我们可能对其一般选择一个较小的正数，但是怎样的一个$\alpha$是合适我们的数据的我们可能并不清楚，另外我们选择使用的$\alpha$一般大家都知道不是最优的。能不能有一种方法自动计算$\alpha$，使得梯度下降法收敛最快，这样就不用精心去设计一个合适的$\alpha$，这种方法就是基于梯度思想的最速下降法(steep descent method)。</p>
 <p>梯度下降法中的$\alpha$是一个我们设计的正数，通过选择该值使得我们的方法收敛，然而严格的来说，问题描述应该是下面这样子</p>
-<p>$$<br>\mathop{\arg\min}_{\alhpa} (x_{k} - \alpha\bigtriangledown f(x_{k}))<br>$$</p>
+<p>$$<br>\mathop{\arg\min}_{\alpha} (x_{k} - \alpha\bigtriangledown f(x_{k}))<br>$$</p>
+<p>$\alpha$的值应该通过上式去优化求解得到最优的值，而不应该使用一个预先定义好的值，而在实际中却往往用后面一种方法，主要就是因为$\alpha$的值推到比较麻烦，需要计算，不如预定义的值使用来得方便。</p>
 <p><img src="/Users/didi/Desktop/gradient.jpg" alt="梯度"></p>
 
       
