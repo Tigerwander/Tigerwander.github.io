@@ -93,7 +93,7 @@ $\langle f(x),d \rangle$是函数在点$x$处沿着方向$d$增加的速率，�
 <meta property="og:description" content="如下图所示，梯度是函数的导数形式$\bigtriangledown f(x)$,经过函数点，方向为梯度的直线也被称为函数在该点的切线。在该点处，函数值增加最大的方向就是切线的方向，所以在求函数的极小值时就可以沿着梯度的负方向寻找。下面尝试进行简单的证明
 $\langle f(x),d \rangle$是函数在点$x$处沿着方向$d$增加的速率，其中$||d||=1$。根据Cauchy-Schwar">
 <meta property="og:image" content="http://yoursite.com/Users/didi/Desktop/gradient.jpg">
-<meta property="og:updated_time" content="2017-05-11T08:00:05.000Z">
+<meta property="og:updated_time" content="2017-05-11T12:58:27.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="梯度方法">
 <meta name="twitter:description" content="如下图所示，梯度是函数的导数形式$\bigtriangledown f(x)$,经过函数点，方向为梯度的直线也被称为函数在该点的切线。在该点处，函数值增加最大的方向就是切线的方向，所以在求函数的极小值时就可以沿着梯度的负方向寻找。下面尝试进行简单的证明
@@ -307,11 +307,20 @@ $\langle f(x),d \rangle$是函数在点$x$处沿着方向$d$增加的速率，�
 <p>$$<br>\langle x_{k+2}-x_{k+1},x_{k+1}-x_{k} \rangle = \alpha_{k}\alpha_{k+1} \langle \bigtriangledown f(x_{k}), f(x_{k+1}) \rangle<br>$$</p>
 <p>这样问题就转化为了证明</p>
 <p>$$<br>\langle \bigtriangledown f(x_{k}), f(x_{k+1}) \rangle=0<br>$$</p>
-<p>在最速下降法中，为了使得$\phi(\alpha)$最小，我们使其梯度为0，有</p>
-<p>$$<br>\begin{align<em>}<br>0=\phi_{k}(\alpha)^’\<br>&amp;=\frac{d\phi_{k}}{\alpha}(\alpha_{k})<br>&amp;=\bigtriangledown f(x_{k}-\alpha \bigtriangledown f(x_{k}))^T(-\bigtriangledown f(x_{k}))<br>&amp;=-\langle \bigtriangledown f(x_{k+1}), \bigtriangledown f(x_{k}) \ rangle<br>\end{align</em>}<br>$$</p>
+<p>在最速下降法中，为了使得$\phi(\alpha)$最小，根据FONC法则（First-Order Necessary Condition)我们使其梯度为0，有</p>
+<p>$$<br>\begin{align<em>}<br>0=\phi_{k}(\alpha)^’<br>&amp;=\frac{d\phi_{k}}{\alpha}(\alpha_{k})<br>&amp;=\bigtriangledown f(x_{k}-\alpha \bigtriangledown f(x_{k}))^T(-\bigtriangledown f(x_{k}))<br>&amp;=-\langle \bigtriangledown f(x_{k+1}), \bigtriangledown f(x_{k}) \ rangle<br>\end{align</em>}<br>$$</p>
 <p>因此有</p>
 <p>$$<br>\langle \bigtriangledown f(x_{k}), f(x_{k+1}) \rangle=0<br>$$</p>
-<p><img src="/Users/didi/Desktop/gradient.jpg" alt="梯度"></p>
+<p>可以看到，最速下降法的迭代是到某一个点为止，这个点与上个点的连线同这个点与下个点的连线垂直。</p>
+<p>在实际机器学习问题中，往往都是关于$x$的二次形式，因此我们着重说一下二次形式的表达形式。假设$f(x)$的表达形式为</p>
+<p>$$<br>f(x)=\frac{1}{2}x^TQx-b^Tx<br>$$<br>上述表达式是关于$x$的方程的一般表达式，第一项为二次项，第二项为一次项。不失一般性，可以将$Q$认为是对称矩阵。对其求导得到</p>
+<p>$$<br>f^’(x)=Qx-b<br>$$</p>
+<p>令$g_{k}(x)=f^’(x_{k})$，梯度下降法公式为</p>
+<p>$$<br>x_{k+1}=x_{k}-\alpha_{k} g_{k}<br>$$</p>
+<p>通过求下面的最小值得到$\alpha_{k}$</p>
+<p>$$<br>\phi(\alpha_{k})&amp;=f(x_{k}-\alpha_{k}g_{k})<br>&amp;=\frac{1}<br>$$</p>
+<p>同样对其进行FONC，使其导数为0，有</p>
+<p>$$<br>0&amp;=\phi^’(\alpha_{k})<br>&amp;=<br><img src="/Users/didi/Desktop/gradient.jpg" alt="梯度"></p>
 
       
     </div>
