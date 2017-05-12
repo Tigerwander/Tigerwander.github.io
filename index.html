@@ -306,11 +306,16 @@
 <p>这样问题就转化为了证明</p>
 <p>$$<br>\langle \bigtriangledown f(x_{k}), f(x_{k+1}) \rangle=0<br>$$</p>
 <p>在最速下降法中，为了使得$\phi(\alpha)$最小，根据FONC法则（First-Order Necessary Condition)我们使其梯度为0，有</p>
-<p>$$<br>\begin{align}<br>0&amp;=\phi_{k}(\alpha_{k})<br>&amp;=\frac{\phi_{k}}{\alpha}(\alpha_{k})<br>\end{align}<br>$$</p>
+<p>$$<br>\begin{align}<br>0&amp;=\phi_{k}(\alpha_{k}) \</p>
+<p>&amp;=\frac{\phi_{k}}{\alpha}(\alpha_{k})<br>\end{align}<br>$$</p>
 <p>因此有</p>
 <p>$$<br>\langle \bigtriangledown f(x_{k}), f(x_{k+1}) \rangle=0<br>$$</p>
 <p>可以看到，最速下降法的迭代是到某一个点为止，这个点与上个点的连线同这个点与下个点的连线垂直。</p>
-<p>$$<br>\begin{align}<br>\sqrt{37} &amp; = \sqrt{\frac{73^2-1}{12^2}}<br> &amp; = \sqrt{\frac{73^2}{12^2}\cdot\frac{73^2-1}{73^2}}<br> &amp; = \sqrt{\frac{73^2}{12^2}}\sqrt{\frac{73^2-1}{73^2}}<br> &amp; = \frac{73}{12}\sqrt{1 - \frac{1}{73^2}}<br> &amp; \approx \frac{73}{12}\left(1 - \frac{1}{2\cdot73^2}\right)<br>\end{align}<br>$$</p>
+<p>$$<br>\begin{align}<br>\sqrt{37} &amp; = \sqrt{\frac{73^2-1}{12^2}}\</p>
+<p> &amp; = \sqrt{\frac{73^2}{12^2}\cdot\frac{73^2-1}{73^2}}\</p>
+<p> &amp; = \sqrt{\frac{73^2}{12^2}}\sqrt{\frac{73^2-1}{73^2}}\</p>
+<p> &amp; = \frac{73}{12}\sqrt{1 - \frac{1}{73^2}}\</p>
+<p> &amp; \approx \frac{73}{12}\left(1 - \frac{1}{2\cdot73^2}\right)<br>\end{align}<br>$$</p>
 <p>在实际机器学习问题中，往往都是关于$x$的二次形式，因此我们着重说一下二次形式的表达形式。假设$f(x)$的表达形式为</p>
 <p>$$<br>f(x)=\frac{1}{2}x^TQx-b^Tx<br>$$<br>上述表达式是关于$x$的方程的一般表达式，第一项为二次项，第二项为一次项。不失一般性，可以将$Q$认为是对称矩阵。对其求导得到</p>
 <p>$$<br>f^’(x)=Qx-b<br>$$</p>
@@ -463,119 +468,6 @@
             
               
                 
-                <a class="post-title-link" href="/2016/08/08/渣渣的世界/" itemprop="url">
-                  渣渣的世界
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-08T11:37:11+08:00" content="2016-08-08">
-              2016-08-08
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/machine-learning/" itemprop="url" rel="index">
-                    <span itemprop="name">machine learning</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>前段时间刚刚忙完手上的项目，这段时间闲下来了。<br>生活在帝都，节奏停不下来，一闲下来就心慌，因此想着自己看点什么，学点什么。因为之前搞得一直都是Python相关的项目，所以首先看了一些Python进阶的资料，发现进阶中说的那些Pythonic的用法基本上都已经掌握了，再继续进阶应该就是看源码了，网上推荐的源码有Flask/requests等等工程方向的。但是作为一个数学出身的机器学习方向的计算机屌丝一枚，虽然进公司后主要在搞大数据方向，进公司后就几乎没接触过与算法相关的项目，主要就是在处理大数据以及业务，因此本着进阶Python和温习机器学习算法的目的，打算看一下Python中最著名的机器学习库sklearn源码。Python作为比较好用的脚本式语言，越来越多的开源机器学习库都采用Python开发，著名的有TensorFlow/sklearn/theaono等。为了保持长时间的记忆，并且帮助他人，我会在这里逐渐更新。<br>送人玫瑰，手有余香。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
                 <a class="post-title-link" href="/2016/08/08/岭回归算法/" itemprop="url">
                   Ridge Regression
                 </a>
@@ -652,6 +544,119 @@
         
           
             <p> 在前面我们大致介绍了线性模型的一般形式，基本的线性模型是通过用最小二乘算法对数据进行拟合，得到的参数完全依赖于数据，如果数据不完全或者有噪音也会影响到参数的精度，即所谓的过拟合现象，过拟合的本质除了数据外不受别的因素的限制，得到的模型在训练数据上测试得到的精度可能会很高，往往模型也很复杂。而根据奥卡姆剃刀原理，解决相同的问题，模型越简单约好，可以针对模型做一下复杂度的限制，复杂度的限制主要包括subset selection 和 shrinkage两种方法，前一种是从所有的变量中选择一部分，这部分变量构成的模型使得残差最小，这种方法的主要不足之处是它是一个离散的方法，对每个变量是0或1决策，导致模型受制于变量的选择。而shrinkage是连续的，它并不是选择子集变量，而是对模型进行惩罚约束，使得每个变量的系数不致过大，因此这种方法的优势相对于subset selection 就是每个变量都在模型中，其值是由惩罚项和数据共同决定的，消除了subset selection 带来的变量0/1问题。subset selection我们放到别的blog中去讲，这篇blog主要讲Ridge Regression。<br> Ridge Regression的思想就是在原模型的基础上加入模型参数二次方的约束$$\min\limits_{w} \lVert Xw - y \rVert_2^2+\alpha \lVert w \rVert_2^2$$<br> 变换形式有<br> $$RSS(w)=(Y-Xw)^T(Y-Xw) + \alpha (w^Tw)$$<br> 对其关于$w$求导得到<br> $$\frac{\partial L}{\partial w}=2X^T(Xw-y) + 2\alpha w$$<br> 令其等于0，得到<br> $$(X^TX + \alpha I)w = X^Ty$$<br> 这就类似于$Ax=b$的形式了，可以直接求解。得到<br> $$w = (X^TX + \alpha I)^{-1}X^TY$$<br> 相比于普通的线性回归，它加入了$\alpha I$项，这样即使$X^TX$不是满秩矩阵，第一项仍然可逆，可以直接求解，这也是二次正则引入统计学的原因之一。<br> 在最小二乘求解线性方程时<br> $$w=(X^TX)^{-1}X^TY$$<br> 如果X是单位正交矩阵，则$X^TX$为单位矩阵，在这种条件下<br> $$w=X^TY$$<br> 衍生到ridge regression中<br>  $$w=(\alpha + 1)X^TY$$<br>  那么最小二乘的解与ridge regression的解的关系是<br>  $$\widehat{w} = \frac{\widehat{w}^{ridge}}{\alpha + 1}$$</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/08/08/渣渣的世界/" itemprop="url">
+                  渣渣的世界
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-08T11:37:11+08:00" content="2016-08-08">
+              2016-08-08
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/machine-learning/" itemprop="url" rel="index">
+                    <span itemprop="name">machine learning</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>前段时间刚刚忙完手上的项目，这段时间闲下来了。<br>生活在帝都，节奏停不下来，一闲下来就心慌，因此想着自己看点什么，学点什么。因为之前搞得一直都是Python相关的项目，所以首先看了一些Python进阶的资料，发现进阶中说的那些Pythonic的用法基本上都已经掌握了，再继续进阶应该就是看源码了，网上推荐的源码有Flask/requests等等工程方向的。但是作为一个数学出身的机器学习方向的计算机屌丝一枚，虽然进公司后主要在搞大数据方向，进公司后就几乎没接触过与算法相关的项目，主要就是在处理大数据以及业务，因此本着进阶Python和温习机器学习算法的目的，打算看一下Python中最著名的机器学习库sklearn源码。Python作为比较好用的脚本式语言，越来越多的开源机器学习库都采用Python开发，著名的有TensorFlow/sklearn/theaono等。为了保持长时间的记忆，并且帮助他人，我会在这里逐渐更新。<br>送人玫瑰，手有余香。</p>
 
           
         
