@@ -310,6 +310,7 @@
 <p>因此有</p>
 <p>$$<br>\langle \bigtriangledown f(x_{k}), f(x_{k+1}) \rangle=0<br>$$</p>
 <p>可以看到，最速下降法的迭代是到某一个点为止，这个点与上个点的连线同这个点与下个点的连线垂直。</p>
+<p>\begin{align}<br>\sqrt{37} &amp; = \sqrt{\frac{73^2-1}{12^2}} \<br> &amp; = \sqrt{\frac{73^2}{12^2}\cdot\frac{73^2-1}{73^2}} \<br> &amp; = \sqrt{\frac{73^2}{12^2}}\sqrt{\frac{73^2-1}{73^2}} \<br> &amp; = \frac{73}{12}\sqrt{1 - \frac{1}{73^2}} \<br> &amp; \approx \frac{73}{12}\left(1 - \frac{1}{2\cdot73^2}\right)<br>\end{align}</p>
 <p>在实际机器学习问题中，往往都是关于$x$的二次形式，因此我们着重说一下二次形式的表达形式。假设$f(x)$的表达形式为</p>
 <p>$$<br>f(x)=\frac{1}{2}x^TQx-b^Tx<br>$$<br>上述表达式是关于$x$的方程的一般表达式，第一项为二次项，第二项为一次项。不失一般性，可以将$Q$认为是对称矩阵。对其求导得到</p>
 <p>$$<br>f^’(x)=Qx-b<br>$$</p>
